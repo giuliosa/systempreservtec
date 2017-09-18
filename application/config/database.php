@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'mysql427.umbler.com',
+	'hostname' => 'mysql552.umbler.com',
 	'username' => 'sys_preservtec',
 	'password' => 'ptdl2008',
 	'database' => 'systempreservtec',
