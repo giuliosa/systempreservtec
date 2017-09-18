@@ -1,0 +1,66 @@
+/*Tela de tablet*/
+@media only screen and (min-width:768px) and (max-width:959px){
+
+  /*Qualidade Home*/
+  .qualidade:after{
+    right: 66px;
+  }
+
+  .qualidade_lista li{
+    padding: 0 10px;
+  }
+
+  /*Footer*/
+
+  .footer_redes ul li a{
+    border: 3px solid #fec63e;
+    display: block;
+    padding: 6px;
+  }
+
+  .footer_redes ul li a img{
+    width: 26px;
+    height: 26px;
+  }
+
+  .footer_redes ul li a:hover{
+    padding: 6px;
+  }
+
+  /*Produto Item*/
+  .produto_item h2{
+    top: -150px;
+    margin-bottom: -36px;
+  }
+
+  .produto_icone{
+    padding: 41px 0;
+  }
+
+  .produto_info p{
+    font-size: 14px;
+    line-height: 20px;
+    height: 122px;
+    padding: 20px 30px;
+  }
+
+  .produto_info ul li{
+    width: 181px;
+    height: 49px;
+  }
+}
+
+  /*Tela de telefone*/
+  @media only screen and (max-width:767px){
+    .left{
+      width: 80px;
+    }
+
+    /*HEADER-LEFT*/
+
+    .left-header{
+      width: 80px;
+    }
+
+  }
+}
