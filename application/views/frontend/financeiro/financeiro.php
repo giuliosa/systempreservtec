@@ -6,7 +6,7 @@
 
       <div class="col-1">
 
-        <?php if (($this->session->userdata('userLogado')->nivel_acesso)=='G') { ?>
+        <?php if (($this->session->userdata('userLogado')->nivel_acesso)=='G'||($this->session->userdata('userLogado')->nivel_acesso)=='C') { ?>
           <form enctype="multipart/form-data" action="financeiro/guardarArquivo" method="post">
             <label >Descrição</label><br>
             <input type="text" name="titulo" size="30"><br>

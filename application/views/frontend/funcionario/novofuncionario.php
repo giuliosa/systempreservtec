@@ -19,6 +19,8 @@
       <label for="tipo">Cargo</label> <br>
       <input type="text" name="cargo" value=""><br>
 
+      
+
       <label for="tipo">E-mail</label> <br>
       <input type="email" name="email" value=""><br>
 
@@ -26,6 +28,14 @@
       <select name="nivel_acesso">
        <option value="O">Operador</option>
        <option value="G">Gerência</option>
+       <option value="C">Cordenação</option>
+       <option value="A">Administração</option>
+      </select><br><br>
+
+      <label for="tipo">Time</label> <br>            
+      <select name="time">
+       <option value="1">Digitalização</option>
+       <option value="2">Comercial/Agência</option>
       </select><br><br>
 
       <label for="tipo">CPF</label> <br>

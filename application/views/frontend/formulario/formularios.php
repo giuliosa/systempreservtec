@@ -36,8 +36,41 @@
         <?php } ?>
 
       </table>
-    <?php } else { ?>
+    <?php } else if(($this->session->userdata('userLogado')->nivel_acesso)=='C'){ ?>
 
+      <!-- Criação de tabela que será visualizada apenas por quem tem o nível de gerência -->
+      <table class="table table-hover">
+        <tr>
+          <th>Nome</th>
+          <th>Resumo Descrição</th>
+          <th>Data e Hora</th>
+          <th>Autorizado</th>
+          <th>Visualizar</th>
+        </tr>
+
+
+        <?php foreach ($form_time as $form) {  ?>
+          <tr data-table='tabela'>
+            <td data-id='<?php echo $form->id ?>'><?php echo $form->nome ?></td>
+            <td data-id='<?php echo $form->id ?>'><?php echo substr($form->descricao, 0 , 40) ?></td>
+            <td data-id='<?php echo $form->id ?>'><?php echo date("d/m/Y", strtotime($form->data)); ?></td>
+            <?php if ($form->aprovado==1 && $form->contador==2) { ?>
+              <td data-id='<?php echo $form->id ?>'>Sim</td>
+            <?php } else if ($form->aprovado==0 && $form->contador==2){  ?>
+              <td data-id='<?php echo $form->id ?>'>Não</td>
+            <?php }else {  ?>
+              <td data-id='<?php echo $form->id ?>'>-</td>
+            <?php }?>
+            <td >
+              <a href="formularios/<?php echo $form->id ?>">
+                Visualizar <i class="fa fa-pencil" aria-hidden="true"></i>
+              </a>
+            </td>
+          </tr>
+        <?php } ?>
+
+      </table>
+    <?php } else{ ?>
       <!-- Quem não é Gerente, vê essa tabela -->
       <button type="button" name="button" onClick="location.href='formularios/novoForm'">Adicionar novo</button>
       <table class="table">
@@ -76,7 +109,7 @@
 
 
       </table>
-    <?php } ?>
+      <?php } ?>
 
     <div class="modal-excluir">
       <header>

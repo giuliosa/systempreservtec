@@ -9,8 +9,9 @@ class Funcionarios extends CI_Controller {
 
 		// $this->load->library('session');
 		$id = $this->session->userdata('userLogado')->id;
+		$nivel = $this->session->userdata('userLogado')->nivel_acesso;
 		$this->load->model('login_model', 'modelfuncionario');
-		$this->funcionario = $this->modelfuncionario->listar_funcionarios();
+		$this->funcionario = $this->modelfuncionario->listar_funcionarios($nivel);
 	}
 
 	public function index()	{
@@ -24,7 +25,7 @@ class Funcionarios extends CI_Controller {
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/funcionarios');
+		$this->load->view('frontend/funcionario/funcionarios');
 		$this->load->view('frontend/template/html-footer');
 	}
 
@@ -37,7 +38,7 @@ class Funcionarios extends CI_Controller {
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/novofuncionario');
+		$this->load->view('frontend/funcionario/novofuncionario');
 		$this->load->view('frontend/template/html-footer');
 	}
 
@@ -51,7 +52,7 @@ class Funcionarios extends CI_Controller {
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/detalhefuncionario');
+		$this->load->view('frontend/funcionario/detalhefuncionario');
 		$this->load->view('frontend/template/html-footer');
 	}
 
@@ -79,6 +80,7 @@ class Funcionarios extends CI_Controller {
 			$cargo = $this->input->post('cargo');
 			$email = $this->input->post('email');
 			$nivel_acesso = $this->input->post('nivel_acesso');
+			$time = $this->input->post('time');
 
 			// Recebe o CPF pelo POST
 			$cpf = $this->input->post('cpf');
@@ -104,7 +106,7 @@ class Funcionarios extends CI_Controller {
 			// $this->modelfuncionario->
 
 			// Se o funcionário for cadastrado com sucesso:
-			if ($this->modelfuncionario->addFuncionario($nome, $login, md5($senha), $cargo, $email,$nivel_acesso, $cpf, $data)) {
+			if ($this->modelfuncionario->addFuncionario($nome, $login, md5($senha), $cargo, $email,$nivel_acesso, $time, $cpf, $data)) {
 
 				// Tente enviar um e-mail para ele dizendo que sua conta foi criada
 				try {

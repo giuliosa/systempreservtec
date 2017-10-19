@@ -3,7 +3,7 @@
     <h2><?php echo $titulo ?></h2>
 
 
-    <?php if (($this->session->userdata('userLogado')->nivel_acesso)=='G') { ?>
+    <?php if (($this->session->userdata('userLogado')->nivel_acesso)=='G'||($this->session->userdata('userLogado')->nivel_acesso)=='C') { ?>
 
 
           <table class="table table-hover">

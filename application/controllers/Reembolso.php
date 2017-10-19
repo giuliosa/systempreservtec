@@ -27,7 +27,7 @@ class Reembolso extends CI_Controller {
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/reembolso');
+		$this->load->view('frontend/reembolso/reembolso');
 		$this->load->view('frontend/template/html-footer');
 	}
 
@@ -43,7 +43,7 @@ class Reembolso extends CI_Controller {
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/novoReembolso');
+		$this->load->view('frontend/reembolso/novoReembolso');
 		$this->load->view('frontend/template/html-footer');
 	}
 
@@ -58,7 +58,7 @@ class Reembolso extends CI_Controller {
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/detalhereembolso');
+		$this->load->view('frontend/reembolso/detalhereembolso');
 		$this->load->view('frontend/template/html-footer');
 	}
 
@@ -73,7 +73,7 @@ class Reembolso extends CI_Controller {
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/detalhereembolsoporfuncionario');
+		$this->load->view('frontend/reembolso/detalhereembolsoporfuncionario');
 		$this->load->view('frontend/template/html-footer');
 	}
 

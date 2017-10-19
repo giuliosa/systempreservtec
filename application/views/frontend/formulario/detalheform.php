@@ -37,7 +37,7 @@
         <?php echo form_close(); ?>
       <?php }?>
 
-      <?php if (($this->session->userdata('userLogado')->nivel_acesso)=='G') { ?>
+      <?php if (($this->session->userdata('userLogado')->nivel_acesso)=='G' || ($this->session->userdata('userLogado')->nivel_acesso)=='C') { ?>
         <?php echo form_open('formularios/atualizaForm');
         if ($formulario->tipo=='solicitacao') { ?>
           <label>Aprovado</label> <br>

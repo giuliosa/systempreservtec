@@ -34,6 +34,20 @@ class Formulario_model extends CI_Model {
     return $this->db->get()->result();
   }
 
+  public function listar_formulario_por_time()
+  {
+    $this->db->select('login.nome,formulario.id , formulario.descricao,
+                       formulario.data, formulario.aprovado,
+                       formulario.contador, formulario.tipo');
+    $this->db->from('formulario');
+    $this->db->join('login', 'login.id = formulario.id_funcionario');
+    $this->db->where('formulario.flag',1);
+    $this->db->where('login.id_time',2);
+    return $this->db->get()->result();
+  }
+
+  
+
   public function listar_formulario_funcionario($id)
   {
     $this->db->where('id_funcionario', $id);

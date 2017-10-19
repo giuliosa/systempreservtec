@@ -26,7 +26,7 @@ class Relatorios extends CI_Controller {
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/relatorios');
+		$this->load->view('frontend/relatorio/relatorios');
 		$this->load->view('frontend/template/html-footer');
 
 	}
@@ -43,7 +43,7 @@ class Relatorios extends CI_Controller {
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/novorelatorio');
+		$this->load->view('frontend/relatorio/novorelatorio');
 		$this->load->view('frontend/template/html-footer');
 	}
 
@@ -58,7 +58,7 @@ class Relatorios extends CI_Controller {
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/detalherelatorio');
+		$this->load->view('frontend/relatorio/detalherelatorio');
 		$this->load->view('frontend/template/html-footer');
 	}
 
@@ -72,7 +72,7 @@ class Relatorios extends CI_Controller {
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/detalherelatorio');
+		$this->load->view('frontend/relatorio/detalherelatorio');
 		$this->load->view('frontend/template/html-footer');
 	}
 
@@ -86,7 +86,7 @@ class Relatorios extends CI_Controller {
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/detalherelatorioporfuncionario');
+		$this->load->view('frontend/relatorio/detalherelatorioporfuncionario');
 		$this->load->view('frontend/template/html-footer');
 	}
 
@@ -170,7 +170,7 @@ class Relatorios extends CI_Controller {
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/editarelatorio');
+		$this->load->view('frontend/relatorio/editarelatorio');
 		$this->load->view('frontend/template/html-footer');
 
 

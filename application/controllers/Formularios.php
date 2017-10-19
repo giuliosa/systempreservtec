@@ -11,6 +11,7 @@ class Formularios extends CI_Controller {
 		$this->load->model('formulario_model', 'modelformulario');
 		$this->formularios = $this->modelformulario->listar_formularios();
 		$this->form_funcionario = $this->modelformulario->listar_formulario_funcionario($id);
+		$this->form_time = $this->modelformulario->listar_formulario_por_time();
 	}
 
 	public function index()
@@ -20,13 +21,14 @@ class Formularios extends CI_Controller {
 		}
 		$dados['formularios'] = $this->formularios;
 		$dados['form_funcionario'] = $this->form_funcionario;
+		$dados['form_time'] = $this->form_time;
 		// Dados a serem enviados para o Cabeçalho
 		$dados['titulo'] = 'Formulários';
 
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/formularios');
+		$this->load->view('frontend/formulario/formularios');
 		$this->load->view('frontend/template/html-footer');
 	}
 
@@ -39,7 +41,7 @@ class Formularios extends CI_Controller {
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/novoForm');
+		$this->load->view('frontend/formulario/novoForm');
 		$this->load->view('frontend/template/html-footer');
 	}
 
@@ -69,7 +71,7 @@ class Formularios extends CI_Controller {
 		$this->load->view('frontend/template/html-header', $dados);
 		$this->load->view('frontend/template/aside');
 		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/detalheform');
+		$this->load->view('frontend/formulario/detalheform');
 		$this->load->view('frontend/template/html-footer');
 	}
 

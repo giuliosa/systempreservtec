@@ -1,6 +1,6 @@
 <section class="conteudo">
   <div class="container">
-    <?php if (($this->session->userdata('userLogado')->nivel_acesso)=='G') { ?>
+    <?php if (($this->session->userdata('userLogado')->nivel_acesso)=='G' || ($this->session->userdata('userLogado')->nivel_acesso)=='C') { ?>
     <h2>Produção do mês de <?php echo mostrarMes(date('n')) ?></h2><br>
     <?php foreach ($relatorio_total as $key): ?>
       <div class="caixas">
