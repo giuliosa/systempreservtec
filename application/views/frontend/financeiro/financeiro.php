@@ -77,6 +77,39 @@
 
     </div>
 
+    <div class="table-responsive">
+
+        <table class="table table-hover">
+
+          <tr>
+            <th>Titulo</th>
+            <th>Data</th>
+            <th>Download</th>
+            <th>Excluir</th>
+          </tr>
+          <?php foreach ($todos_arquivos as $arquivo) { ?>
+
+            <tr data-table='tabela'>
+              <td><?php echo $arquivo->titulo ?></td>
+              <td><?php echo $arquivo->data ?></td>
+              <td>
+                <a href="downloadArquivo/<?php echo $arquivo->id ?>"  target="_blank">
+                  Download <i class="fa fa-download" aria-hidden="true"></i>
+                </a>
+              </td>
+              <td data-target='excluir'>
+                <a href="#" id="excluir-form" data-click='<?php echo $arquivo->id ?>' data-type='financeiro'>
+                  Excluir <i class="fa fa-trash" aria-hidden="true"></i>
+                </a>
+              </td>
+            </tr>
+          <?php 
+        } ?>
+
+        </table>
+
+      </div>
+
     <?php if (($this->session->userdata('userLogado')->nivel_acesso)=='O') { ?>
       <div class="table-responsive">
 
@@ -105,7 +138,19 @@
       </div>
     <?php } ?>
 
+    <div class="modal-excluir">
+      <header>
+        <h4>Excluir</h4>
+      </header>
+      <section>
+        <p>Tem certeza que deseja excluir esse arquivo?</p>
+      </section>
+      <div class="botoes">
+        <button type="button" name="button" id="cancelar-excluir">Cancelar</button>
+        <button class="btn-branco" type="button" name="button" id="confirmar-excluir">Excluir</button>
+      </div>
 
+    </div>
 
 
 

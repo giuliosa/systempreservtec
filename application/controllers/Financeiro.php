@@ -9,6 +9,7 @@ class Financeiro extends CI_Controller {
 		$id = $this->session->userdata('userLogado')->id;
 		$this->load->model('financeiro_model', 'modelfinanceiro');
 		$this->arquivos = $this->modelfinanceiro->listar_arquivos_por_funcionario($id);
+		$this->todos_arquivos = $this->modelfinanceiro->listar_arquivos();
 		$this->funcionarios = $this->modelfinanceiro->listar_funcionarios();
 
 	}
@@ -21,6 +22,7 @@ class Financeiro extends CI_Controller {
 		// Dados a serem enviados para o Cabeçalho
 		$dados['titulo'] = 'Financeiro e RH';
 		$dados['arquivos'] = $this->arquivos;
+		$dados['todos_arquivos'] = $this->todos_arquivos;
 		$dados['funcionarios'] = $this->funcionarios;
 
 
@@ -145,9 +147,12 @@ class Financeiro extends CI_Controller {
 
 		$dados = $this->modelfinanceiro->conteudo_arquivo($id);
 
+		print_r($dados);
+
 		foreach ($dados as $value) {
 			$arquivoPath = './uploads/files/'.$value->folder.'/'.$value->titulo;
-			force_download($arquivoPath,null);
+			echo ('<br>'.$arquivoPath);
+			force_download($arquivoPath, null, TRUE);
 		}
 
 
@@ -161,9 +166,15 @@ class Financeiro extends CI_Controller {
 		// 	header("Pragma: no-cache");
 		// 	echo ($key->conteudo);
 		// }
+	}
 
+	public function excluir($id){
+		echo("isso é um id: " . $id);
 
-
-
+		if ($this->modelfinanceiro->excluir($id)) {
+			redirect(base_url('financeiro'));
+		} else {
+			echo "Houve um erro";
+		}
 	}
 }

@@ -42,6 +42,7 @@ class Financeiro_model extends CI_Model {
   public function listar_arquivos()
   {
     $this->db->select('*');
+    $this->db->where('flag', 1);
     return $this->db->get('arquivos')->result();
   }
 
@@ -57,6 +58,12 @@ class Financeiro_model extends CI_Model {
     $this->db->select('tipo, folder, titulo');
 		$this->db->where('id', $id);
     return $this->db->get('arquivos')->result();
+  }
+
+  public function excluir($id){
+    $dados['flag'] = 0;
+    $this->db->where('id', $id);
+    return $this->db->update('arquivos', $dados);
   }
 
 

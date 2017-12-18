@@ -19,6 +19,8 @@ class Login_model extends CI_Model {
 	{
 		if ($nivel == "G") {
 			$this->db->select('*');
+			$this->db->where('flag', 1);
+			$this->db->order_by('nome');
     	$this->db->from('login');
 
 			return $this->db->get()->result();
@@ -26,6 +28,7 @@ class Login_model extends CI_Model {
 		} else if($nivel == "C"){
 			$this->db->select('*');
 			$this->db->from('login');
+			$this->db->where('flag', 1);			
 			$this->db->where('id_time', 2);
 
     	return $this->db->get()->result();
@@ -45,6 +48,7 @@ class Login_model extends CI_Model {
 		$dados['id_time'] = $time;
 		$dados['cpf'] = $cpf;
 		$dados['data_nascimento'] = $data;
+		$dados['flag'] = 1;
 		return $this->db->insert('login', $dados);
 
 	}
@@ -67,5 +71,11 @@ class Login_model extends CI_Model {
 		$this->db->where('id_time',2);
 
     return $this->db->get()->result();
+	}
+
+	public function excluir($id){
+		$dados['flag'] = 0;
+		$this->db->where('md5(id)', $id);
+		return $this->db->update('login', $dados);
 	}
 }

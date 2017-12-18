@@ -130,6 +130,11 @@ $(document).ready(function(){
         window.location.href = "formularios/excluir/"+id+"/";
       } else if (type == 'relatorio') {
         window.location.href = "relatorios/excluir/"+id+"/";        
+      } else if(type == 'func'){
+        console.log(id);
+        window.location.href = "funcionarios/excluir/" + id ;       
+      } else if( type == 'financeiro') {
+        window.location.href = "financeiro/excluir/" + id;       
       }
     });
 

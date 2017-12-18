@@ -17,7 +17,9 @@
               <td data-func='<?php echo $funcionario->id ?>' data-nome='<?php echo limpar($funcionario->nome) ?>'><?php echo $funcionario->nome ?></td>
               <td data-func='<?php echo $funcionario->id ?>' data-nome='<?php echo limpar($funcionario->nome) ?>'><?php echo $funcionario->cargo ?></td>
               <td data-target='excluir'>
-                <a href="funcionarios/excluir/<?php echo md5($funcionario->id)?>">Excluir <i class="fa fa-trash"> </i></a>
+                <a href="#" id="excluir-form" data-click='<?php echo md5($funcionario->id) ?>' data-type='func'>
+                  Excluir <i class="fa fa-trash"> </i>
+                </a>
               </td>
 
             </tr>
@@ -34,17 +36,11 @@
           </section>
           <div class="botoes">
             <button type="button" name="button" id="cancelar-excluir">Cancelar</button>
-            <button class="btn-branco" type="button" name="button" onClick="location.href='formularios/excluir/<?php echo $form->id ?>'">Excluir</button>
+            <button class="btn-branco" type="button" name="button" id="confirmar-excluir" >Excluir</button>
           </div>
 
         </div>
       </div>
-
-
-
-
-
-
 
   </div>
 </section>

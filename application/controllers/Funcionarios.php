@@ -129,36 +129,12 @@ class Funcionarios extends CI_Controller {
 
 	}
 
-	public function atualizaForm(){
-		if (!$this->session->userdata('logado')) {
-			redirect(base_url('login'));
-		}
-		$this->load->model('formulario_model','modelformulario');
-		$justificativa = $this->input->post('justificativa');
-		$id = $this->input->post('txt-id');
-		$aprovaDoBanco = $this->modelformulario->verificaAprovacao($id);
-		$aprova = $this->input->post('aprova');
-		foreach ($aprovaDoBanco as $value) {
-			if ($value->aprovado == 0 && !empty($value->aprovado)) {
-				$aprova = 0;
-			}
-		}
-
-		$contador = (int) $this->input->post('txt-contador');
-		$contador += 1;
-		if ($this->modelformulario->atualizar($justificativa,$aprova,$contador,$id)) {
-			redirect(base_url('formularios'));
+	public function excluir($id)
+	{
+		if($this->modelfuncionario->excluir($id)){
+			redirect(base_url('funcionarios'));
 		}else {
 			echo "Houve um erro";
 		}
 	}
-
-	// public function excluir($id)
-	// {
-	// 	if($this->modelformulario->excluir($id)){
-	// 		redirect(base_url('formularios'));
-	// 	}else {
-	// 		echo "Houve um erro";
-	// 	}
-	// }
 }

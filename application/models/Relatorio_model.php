@@ -32,7 +32,7 @@ class Relatorio_model extends CI_Model {
 
   public function listar_resultados($mes){
 
-    $this->db->select("(select count(login.id) from login where nivel_acesso = 'o') as operadores, sum(relatorio.cliques) as cliques_soma , sum(relatorio.imagens) as imagens_soma");
+    $this->db->select("(select count(login.id) from login where nivel_acesso = 'o' and flag = 1) as operadores, sum(relatorio.cliques) as cliques_soma , sum(relatorio.imagens) as imagens_soma");
     $this->db->from('login');
     $this->db->join('relatorio', 'login.id = relatorio.id_funcionario');
     $this->db->where('login.nivel_acesso', 'o');
