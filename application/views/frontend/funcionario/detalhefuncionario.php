@@ -1,5 +1,5 @@
 <section class="conteudo">
-  <div class="container">
+  <div class="corpo">
     <section class="secao-funcionario">
 
       <div class="descricao-funcionario">

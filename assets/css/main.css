@@ -9,7 +9,7 @@
 
 body {
     font-family: 'Raleway', helvetica Arial, Helvetica, sans-serif;
-    font-size: 24px;
+    font-size: 18px;
     overflow-x: hidden;
     background:   #eff0f4;
 }
@@ -24,7 +24,7 @@ p, blockquote {
 h2 {
     margin-top: 30px;
     margin-bottom: 15px;
-    font-size: 42px;
+    font-size: 38px;
     text-transform: uppercase;
     font-weight: bolder;
     display: block;
@@ -80,15 +80,15 @@ button:hover{
 .left{
   /*display: none;*/
   position: fixed;
-  width: 200px;
-  min-height:100%;
+  width: 15vw;
+  height: 100vh;
   background-color: #415f9d;
 }
 
 /*HEADER-LEFT*/
 
 .left-header{
-  width: 200px;
+  width: 15vw;
   height: 80px;
   background-color:#233b6e ;
 }
@@ -124,6 +124,7 @@ button:hover{
   color:#eff0f4;
   font-size: 16px;
   transition: all .3s ease;
+  margin-bottom: 0;
 }
 
 .left-menu .list-group:hover,
@@ -135,17 +136,20 @@ button:hover{
 /*----------CENTER-----------*/
 
 .center{
-  width: 200px;
+  display: block;
+  width: 15vw;
+  height: 100vh;
 }
 /*----------RIGHT------------*/
 
 .right{
-  width: calc(100% - 200px);
+  width:85vw;
 }
 
 /*HEADER-RIGHT*/
 .right-header{
   display: flex;
+  width:86vw ;
   flex-direction: row-reverse;
   height: 80px;
   background-color: #d3d6db;
@@ -194,29 +198,36 @@ button:hover{
   background-color: #eff0f4;
 }
 
-.conteudo .container{
+.conteudo .corpo{
   display: flex;
+  margin-left: 40px;
   flex-direction: column;
 }
 
 /*FORMULÁRIOS*/
 
-.conteudo .container button{
+.conteudo .corpo form button{
   margin-top: 30px;
   margin-right: 15px;
 }
 
-.conteudo .container table{
+/* .form-box{
+  padding: 15px;
+  background: #d3d6db;
+  box-shadow: 1px 1px 3px #111;
+} */
+
+.conteudo .corpo table{
   margin-top: 15px;
-  width: 85%;
+  width: 90%;
 }
 
-.conteudo .container table th{
+.conteudo .corpo table th{
   background-color: #415f9d ;
   color: #eff0f4 ;
 }
 
-.conteudo .container table td{
+.conteudo .corpo table td{
   cursor: pointer;
 }
 
@@ -306,11 +317,11 @@ button:hover{
 
 /*FORMULÁRIOS DETALHADOS*/
 
-.conteudo .container form{
-  margin-top: 30px;
+.conteudo .corpo form{
+  /* margin-top: 30px; */
 }
 
-.conteudo .container form textarea{
+.conteudo .corpo form textarea{
   font-size: 14px;
   margin-top: 15px;
   width: 92.6%;
@@ -318,51 +329,51 @@ button:hover{
   resize: none;
 }
 
-.conteudo .container form .botoes{
+.conteudo .corpo form .botoes{
   display: flex;
   margin-bottom: 30px;
 }
 
-.conteudo .container form .btn-branco{
-  background-color: #d3d6db;
+.conteudo .corpo form .btn-branco{
+  background-color: #f95959;
   color:  #eff0f4;
 }
 
-.conteudo .container form .btn-branco:hover{
-  background-color: #f95959;
+.conteudo .corpo form .btn-branco:hover{
+  background-color: #be3144;
 }
 
 /*DESCRIÇÃO FORMULÁRIO*/
-.conteudo .container form p{
+.conteudo .corpo form p{
   padding-right: 100px;
 }
 
 /*APROVAR FORMULÁRIO*/
 
-.conteudo .container form .btn-justificativa{
+.conteudo .corpo form .btn-justificativa{
   margin-bottom: 30px;
 }
 
 /*NOVOS RELATÓRIOS*/
-.conteudo .container .form-control{
+.conteudo .corpo .form-control{
   width: 160px;
 }
 
 /*SUPER RELATÓRIOS*/
-.conteudo .container .table-espec td:hover{
+.conteudo .corpo .table-espec td:hover{
   background-color: #d3d6db;
 }
 
 /*INDEX*/
-.conteudo .container .secao-funcionario{
+.conteudo .corpo .secao-funcionario{
   margin-top: 30px;
   display: flex;
 }
-.conteudo .container .secao-funcionario .foto-funcionario{
+.conteudo .corpo .secao-funcionario .foto-funcionario{
   margin-right: 20px;
 }
 
-.conteudo .container .funcionario{
+.conteudo .corpo .funcionario{
   width: 120px;
 }
 
@@ -372,12 +383,11 @@ button:hover{
 
 .caixa{
   display: block;
-  margin: 10px;
+  margin: 40px 15px 0 0;
   background-color: grey;
   color:#f1f1f1;
   text-align: center;
-  padding: 20px 0;
-  border-radius: 9px;
+  padding: 20px 15px;
   width: calc(100%/3 - 2%);
 }
 
@@ -495,22 +505,45 @@ button:hover{
 }
 
 /* FINANCEIRO */
-.conteudo .container .row{
+.conteudo .corpo .row{
   display: flex;
   flex-direction: row;
-
+  margin-left:0;
   font-size: 18px;
 }
 
-.conteudo .container .row .col-1{
-  width: 50%;
+.conteudo .corpo .row .col-70{
+  width: 60%;
+  padding: 20px;
+  background: #d3d6db;
+  box-shadow: 1px 1px 3px #111;
+  margin-right: 40px;
 }
 
-.conteudo .container .row .col-1 input{
-  margin: 5px 0;
+.conteudo .corpo .row .col-30{
+  width: 40%;
+  height: 190px;
+  padding: 20px;
+  background: #d3d6db;
+  box-shadow: 1px 1px 3px #111;
+  margin-right: 20px;
+  margin-right: 60px;
 }
 
-.conteudo .container .row .col-1 .btn{
+.conteudo .corpo .row .col-70 input{
+  margin: 8px 0 15px 0;
+}
+
+.conteudo .corpo .row .col-70 select{
+  margin: 8px 0 15px 0;
+}
+
+.conteudo .col-70 .input-arquivo{
+  font-size: 13px;
+}
+
+
+.conteudo .corpo .row .col-70 .btn{
   margin-top: 5px;
   font-family: 'Raleway', helvetica Arial, Helvetica, sans-serif;
   display: block;
@@ -526,17 +559,158 @@ button:hover{
   transition: all .3s ease;
 }
 
+/*Tela média*/
+
+@media only screen and (min-width:992px) and (max-width:1199px) {
+  /* Regras gerais */
+  h2{
+    font-size:30px;
+  }
+
+  form label, form span{
+    font-size:18px;
+    
+  }
+
+  /* NAV MENU */
+  .left-menu .list-group{
+    padding: 10px 0 10px 10px;
+    font-size: 14px;
+    transition: all .3s ease;
+  } 
+
+  /* HOME */
+
+  .conteudo .corpo{
+    margin-left: 20px;
+  }
+  .caixa{
+    margin: 40px 15px 0 0;
+    text-align: center;
+    padding: 20px 15px;
+    width: calc(100%/3 - 2%);
+  }
+
+  .caixa h4{
+    font-size: 1.2em;
+  }
+
+  .caixa span{
+    font-size: 1em;
+  }
+
+  /* DADOS */
+  .descricao-funcionario label, .descricao-funcionario span{
+    font-size:18px;    
+  }
+}
+
+
+/* Tela de tablet */
 @media only screen and (min-width:768px) and (max-width:991px) {
+  /* Regras gerais */
+  table{
+    font-size: 12px;
+  }
+
+  h2{
+    font-size:24px;
+  }
+
+  form label, form span{
+    font-size:12px;
+  }
+
+  button{
+    width: 150px;
+    height: 30px;
+    font-size: 12px;
+}
+
   .modal-login {
       margin: 0 auto;
       padding: 60px;
       width: 100%;
   }
+
+  /* NAV MENU */
+  .left-menu .list-group{
+    padding: 10px 0 10px 10px;
+    font-size: 12px;
+    transition: all .3s ease;
+  } 
+
+  /*HEADER-LEFT*/
+
+  .left-header{
+    height: 60px;
+  }
+
+
+  .right-header{
+    height: 60px;
+    background-color: #d3d6db;
+  }
+
+  .right-header .fa-user{
+    font-size: 20px;
+  }
+
+  /* HOME */
+
+  .conteudo .corpo{
+    margin-left: 20px;
+  }
+  .caixa{
+    margin: 40px 15px 0 0;
+    text-align: center;
+    padding: 20px 15px;
+    width: calc(100%/3 - 2%);
+  }
+
+  .caixa h4{
+    font-size: 1em;
+  }
+
+  .caixa span{
+    font-size: 1em;
+  }
+
   .foto-background{
     visibility: hidden;
     opacity: 0;
   }
-}
+
+  .conteudo .corpo .row .col-70{
+    width: 60%;
+    padding: 20px;
+    background: #d3d6db;
+    box-shadow: 1px 1px 3px #111;
+    margin-right: 40px;
+  }
+
+  .conteudo .corpo .row .col-30{
+    width: 40%;
+    height: 190px;
+    padding: 20px;
+    background: #d3d6db;
+    box-shadow: 1px 1px 3px #111;
+    margin-right: 20px;
+    margin-right: 60px;
+  }
+
+  .conteudo .corpo .row .col-70 input{
+    margin: 8px 0 15px 0;
+  }
+
+  .conteudo .corpo .row .col-70 select{
+    margin: 8px 0 15px 0;
+  }
+
+  .conteudo .col-70 .input-arquivo{
+    font-size: 13px;
+  }
+  }
 
 
 /*Tela de telefone*/
@@ -600,11 +774,11 @@ button:hover{
   }
 
   /* FINANCEIRO */
-  .conteudo .container .row{
+  .conteudo .corpo .row{
     flex-direction: column-reverse;
   }
 
-  .conteudo .container .row .col-1{
+  .conteudo .corpo .row .col-1{
     width: 100%;
   }
 

@@ -1,5 +1,5 @@
 <section class="conteudo">
-  <div class="container">
+  <div class="corpo">
     <section class="secao-funcionario">
       <!-- <div class="foto-funcionario">
         <img class="funcionario" src="<?php// echo base_url('assets/img/indice.png')?>" alt="">

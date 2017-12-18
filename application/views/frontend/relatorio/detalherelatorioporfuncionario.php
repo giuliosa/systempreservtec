@@ -1,5 +1,5 @@
 <section class="conteudo">
-  <div class="container">
+  <div class="corpo">
     <h2><?php echo $titulo ?></h2>
 
     <table class="table table-hover">

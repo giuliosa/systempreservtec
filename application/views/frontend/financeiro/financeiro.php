@@ -1,30 +1,30 @@
 <section class="conteudo">
-  <div class="container">
+  <div class="corpo">
     <h2><?php echo $titulo ?></h2>
 
-    <div class="row container">
+    <div class="row corpo">
 
-      <div class="col-1">
+      <div class="col-70">
 
         <?php if (($this->session->userdata('userLogado')->nivel_acesso)=='G'||($this->session->userdata('userLogado')->nivel_acesso)=='C') { ?>
           <form enctype="multipart/form-data" action="financeiro/guardarArquivo" method="post">
             <label >Descrição</label><br>
             <input type="text" name="titulo" size="30"><br>
-            <label >Tipo de arquivo</label>
+            <label >Tipo de arquivo</label><br>
             <select name="tipo">
               <option value="contracheque">Contracheque</option>
               <option value="contrato">Contrato</option>
               <option value="contrato">Outros</option>
             </select><br>
 
-            <label >Funcionário</label>
+            <label >Funcionário</label><br>
             <select name="id">
 
               <?php foreach ($funcionarios as $funcionario) { ?>
                 <option value="<?php echo $funcionario->id?>"><?php echo $funcionario->nome ?></option>
               <?php } ?>
             </select><br>
-            <label >Arquivo</label> <input type="file" name="arquivo">
+            <label >Arquivo</label> <input class="input-arquivo" type="file" name="arquivo">
 
             <p>Data: <input type="text" name="data" id="datepicker"></p>
 
@@ -35,11 +35,11 @@
           <form enctype="multipart/form-data" action="financeiro/enviarAtestado" method="post">
             <label >Atestado Médico</label><br>
             <label >Descrição</label><br>
-            <input type="text" name="titulo" size="30">
+            <input type="text" name="titulo" size="30"><br>
             <select hidden name="tipo">
               <option value="atestado"></option>
             </select><br>
-            <label >Arquivo</label> <input type="file" name="arquivo">
+            <label >Arquivo</label> <input type="file" name="arquivo"><br>
 
             <input ctype="text"name="id" value="<?php echo $this->session->userdata('userLogado')->id?>" hidden>
 
@@ -51,7 +51,7 @@
 
       </div>
 
-      <div class="col-1">
+      <div class="col-30">
         <label>Memorando Interno</label>
 
         <div class="table-responsive">

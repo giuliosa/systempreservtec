@@ -1,5 +1,5 @@
 <section class="conteudo">
-  <div class="container">
+  <div class="corpo">
     <h2><?php echo $titulo ?></h2>
 
     <!-- Verificar qual o tipo de usuário está logado no momento -->

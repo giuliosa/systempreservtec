@@ -1,5 +1,5 @@
 <section class="conteudo">
-  <div class="container">
+  <div class="corpo">
     <h2><?php echo $titulo ?></h2>
 
       <button type="button" name="button" onClick="location.href='funcionarios/novoFuncionario'">Adicionar novo</button>

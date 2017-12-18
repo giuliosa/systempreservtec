@@ -1,3 +1,9 @@
+/*Tela média*/
+
+@media only screen and (min-width:992px) and (max-width:1199px) {
+  
+}
+
 /*Tela de tablet*/
 @media only screen and (min-width:768px) and (max-width:959px){
 
