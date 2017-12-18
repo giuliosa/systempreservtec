@@ -76,6 +76,8 @@
       </div>
 
     </div>
+    
+    <?php if (($this->session->userdata('userLogado')->nivel_acesso) == 'G' || ($this->session->userdata('userLogado')->nivel_acesso) == 'C') { ?>
 
     <div class="table-responsive">
 
@@ -109,7 +111,8 @@
         </table>
 
       </div>
-
+    <?php 
+    } ?>
     <?php if (($this->session->userdata('userLogado')->nivel_acesso)=='O') { ?>
       <div class="table-responsive">
 
