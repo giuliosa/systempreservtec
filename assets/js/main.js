@@ -152,4 +152,8 @@ $(document).ready(function(){
     //   window.location.href = "relatorios/excluir/"+id+"/";
     // });
 
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    })
+
 });

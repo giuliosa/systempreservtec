@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'http://localhost/systempreservtec';
-$config['base_url'] = 'http://sistema.preservtec.com.br';
+$config['base_url'] = 'https://sistema.preservtec.com.br';
 
 /*
 |--------------------------------------------------------------------------

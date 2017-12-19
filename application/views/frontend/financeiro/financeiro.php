@@ -6,33 +6,48 @@
 
       <div class="col-70">
 
-        <?php if (($this->session->userdata('userLogado')->nivel_acesso)=='G'||($this->session->userdata('userLogado')->nivel_acesso)=='C') { ?>
-          <form enctype="multipart/form-data" action="financeiro/guardarArquivo" method="post">
-            <label >Descrição</label><br>
-            <input type="text" name="titulo" size="30"><br>
-            <label >Tipo de arquivo</label><br>
+        <?php if (($this->session->userdata('userLogado')->nivel_acesso)=='G'||($this->session->userdata('userLogado')->nivel_acesso)=='C') {
+          echo validation_errors();
+          echo form_open_multipart('financeiro/guardarArquivo');
+          ?>
+          <!-- <form enctype="multipart/form-data" action="financeiro/guardarArquivo" method="post"> -->
+            <!-- <label >Descrição</label><br>
+            <input type="text" name="titulo" size="30"><br> -->
+            <label >Tipo de arquivo</label>
+            <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="right" title="Selecione um tipo de arquivo. Caso o tipo não seja encontrado, selecione outro" aria-hidden="true"></i>
+            <br>
             <select name="tipo">
               <option value="contracheque">Contracheque</option>
               <option value="contrato">Contrato</option>
               <option value="contrato">Outros</option>
             </select><br>
 
-            <label >Funcionário</label><br>
+            <label >Funcionário</label>
+            <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="right" title="Selecione um funcionário" aria-hidden="true"></i>
+            <br>
             <select name="id">
 
               <?php foreach ($funcionarios as $funcionario) { ?>
                 <option value="<?php echo $funcionario->id?>"><?php echo $funcionario->nome ?></option>
               <?php } ?>
             </select><br>
-            <label >Arquivo</label> <input class="input-arquivo" type="file" name="arquivo">
+            <label >Arquivo</label> 
+            <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="right" title="Selecione o arquivo, ou arraste um documento" aria-hidden="true"></i>
+            <input class="input-arquivo" type="file" name="arquivo">
 
-            <p>Data: <input type="text" name="data" id="datepicker"></p>
+            <label for="data">Data</label> 
+            <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="right" title="Data do documento" aria-hidden="true"></i>
+            <br>
+            <input type="text" name="data" id="data" value=""><br>
 
             <input class="btn" type="submit" value="Enviar arquivo">
 
           </form>
-        <?php } else{ ?>
-          <form enctype="multipart/form-data" action="financeiro/enviarAtestado" method="post">
+        <?php } else{
+        echo validation_errors();
+        echo form_open_multipart('financeiro/enviarAtestado');
+        ?>
+          <!-- <form enctype="multipart/form-data" action="financeiro/enviarAtestado" method="post"> -->
             <label >Atestado Médico</label><br>
             <label >Descrição</label><br>
             <input type="text" name="titulo" size="30"><br>
@@ -84,6 +99,8 @@
         <table class="table table-hover">
 
           <tr>
+            <th>Tipo</th>
+            <th>Funcionário</th>
             <th>Titulo</th>
             <th>Data</th>
             <th>Download</th>
@@ -92,7 +109,18 @@
           <?php foreach ($todos_arquivos as $arquivo) { ?>
 
             <tr data-table='tabela'>
+              <td><?php echo $arquivo->folder ?></td>
+              
+            <?php foreach ($funcionarios as $funcionario) { 
+              if($funcionario->id == $arquivo->id_funcionario){ ?>
+                
+                <td><?php echo $funcionario->nome ?></td>
+
+              <?php } 
+              } ?>
               <td><?php echo $arquivo->titulo ?></td>
+
+
               <td><?php echo $arquivo->data ?></td>
               <td>
                 <a href="downloadArquivo/<?php echo $arquivo->id ?>"  target="_blank">
